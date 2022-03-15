@@ -1,3 +1,5 @@
+//avigael abitbol
+
 #include<iostream>
 #include<string>
 #include "mat.hpp"
@@ -6,40 +8,37 @@
 using namespace std;
 using namespace ariel;
 
-
-const int lowest = 33;
-const int highest = 126;
-
 using namespace std;
 namespace ariel{
 
     // Function to create the carpet
     string mat(int ec,int er,char char1,char char2)
     {
-        /*  sr - starting row index
-            er - ending row index
+        /*  sr - starting row = 0
+            er - ending row = er
             sc - starting column = 0
-            ec - ending column = 0
+            ec - ending column = ec
             char1 - one of the char we want in our carpet
             char2 - the second char we want in our carpet
         */
 
        //check odd number
-        if(ec%2==0 || er%2==0){
-                throw runtime_error("wrong input - number needs to be odd");
+        if(ec%2==0){
+                throw runtime_error("wrong input - colunm number needs to be odd");
+            }
+        if (er%2==0){
+                throw runtime_error("wrong input - row number needs to be odd");
             }
         //check if the number is smaller then 0
-        if(ec<0 || er<0){
-                throw runtime_error("worng input - number needs to be grather than 0");
+        if(ec<0){
+                throw runtime_error("worng input - column number needs to be grather than 0");
             }
-        if (char1 < lowest || char1 > highest || char2 < lowest || char2 > highest){
-            throw invalid_argument{"Invalid input of char"};
-        }
+        if(er<0){
+                throw runtime_error("worng input - row number needs to be positive");
+            }
         int i, sr = 0, sc = 0;
-
-        // here we save the number of row and collum given to transform the matrix to string
+        // here - we save the number of row and collum given to transform the matrix to string
         int row = er, col = ec;
-
         // mat is where we built our matrix (-carpet) 
         char mat[er][ec];
         char c = char1; // c is the first char we will enter in our matrix\carpet and then we will change
@@ -47,19 +46,19 @@ namespace ariel{
         // Fill the matrix
         while (sr < er && sc < ec)
         {
-            /* Fill the first row */
+            // Fill the first row 
             for (i = sc; i < ec; ++i){
                 mat[sr][i] = c;
             }
             sr++;
 
-            /* Fill the last column */
+            // Fill the last column 
             for (i = sr; i < er; ++i){
                 mat[i][ec-1] = c;
             }
             ec--;
 
-            /* Fill the last row */
+            // Fill the last row 
             if (sr < er)
             {
                 for (i = ec-1; i >= sc; --i){
@@ -68,7 +67,7 @@ namespace ariel{
                 er--;
             }
 
-            /* Print the first column */
+            // fill the first column 
             if (sc < ec)
             {
                 for (i = er-1; i >= sr; --i){

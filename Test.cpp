@@ -13,6 +13,7 @@
 #include "mat.hpp"
 using namespace ariel;
 
+#include <algorithm>
 #include <string>
 using namespace std;
 
@@ -21,10 +22,10 @@ using namespace std;
  * Requires std=c++2a.
  */
 string nospaces(string input) {
-	std::erase(input, ' ');
-	std::erase(input, '\t');
-	std::erase(input, '\n');
-	std::erase(input, '\r');
+	std::erase(input,' ');
+	std::erase(input,'\t');
+	std::erase(input,'\n');
+	std::erase(input,'\r');
 	return input;
 }
 
