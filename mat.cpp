@@ -23,8 +23,9 @@ namespace ariel{
             ec - ending column = ec
             char1 - one of the char we want in our carpet
             char2 - the second char we want in our carpet
+            strMat - to save the matrix to string
         */
-
+       string strMat;
        //check odd number
         if(ec%2==0){
                 throw runtime_error("wrong input - colunm number needs to be odd");
@@ -42,7 +43,7 @@ namespace ariel{
         int i, sr = 0, sc = 0;
         // here - we save the number of row and collum given to transform the matrix to string
         int row = er, col = ec;
-        
+
         // mat is where we built our matrix (-carpet) 
         char mat[er][ec];
         char c = char1; // c is the first char we will enter in our matrix\carpet and then we will change
@@ -88,7 +89,6 @@ namespace ariel{
         }
         // now we finished to fill the matrix
         // transform the matrix to string.
-        string strMat;
         for (i = 0; i < row; i++){
                 for (int j = 0; j < col; j++){
                     strMat += mat[i][j];
