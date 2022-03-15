@@ -1,4 +1,7 @@
 //avigael abitbol
+//after a lot of work on this assignement i try to find some help on internet because i didn't want to ask my classmate
+//https://www.geeksforgeeks.org/create-a-matrix-with-alternating-rectangles-of-0-and-x/
+// mt logic was the same i just had problem with the order of the for (problem with the sr++ and ec--)
 
 #include<iostream>
 #include<string>
@@ -39,6 +42,7 @@ namespace ariel{
         int i, sr = 0, sc = 0;
         // here - we save the number of row and collum given to transform the matrix to string
         int row = er, col = ec;
+        
         // mat is where we built our matrix (-carpet) 
         char mat[er][ec];
         char c = char1; // c is the first char we will enter in our matrix\carpet and then we will change
